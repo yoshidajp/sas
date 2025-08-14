@@ -1,0 +1,9 @@
+/*
+!/.gitignore
+!/sas/
+/sas/*
+!/sas/wp-content/
+/sas/wp-content/*
+!/sas/wp-content/themes/
+/sas/wp-content/themes/*
+!/sas/wp-content/themes/sas/

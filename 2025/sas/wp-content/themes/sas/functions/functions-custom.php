@@ -1,0 +1,76 @@
+<?php
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+//
+// メニューを登録
+//
+////////////////////////////////////////////////////////////////////////////////////////
+add_action('after_setup_theme', function () {
+	register_nav_menus(array(
+		// 例 'メニューの位置を示す固有名称' => 'このメニューの位置の名称'
+		'global-nav' => 'グローバルメニュー',
+		'footer--primary' => 'フッターメニュー（メイン）',
+		'footer--secondary' => 'フッターメニュー（サブ）',
+		'home-panel' => 'トップページパネル',
+	));
+});
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+//
+// wp_head()でのtitleタグ出力有効化
+// https://affi-sapo.com/3450/#gsc.tab=0
+//
+////////////////////////////////////////////////////////////////////////////////////////
+add_theme_support( 'title-tag' );
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+//
+// wp_headをインデントする
+//
+////////////////////////////////////////////////////////////////////////////////////////
+function indented_wp_head()
+{
+	ob_start();
+	wp_head();
+	$header = ob_get_contents();
+	ob_end_clean();
+	echo preg_replace("/\n/", "\n\t", substr($header, 0, -1));
+	echo "\n";
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+//
+// ページ属性「非公開」ページを親ページとして選択
+// https://hirashimatakumi.com/blog/4384.html
+//
+////////////////////////////////////////////////////////////////////////////////////////
+add_filter('page_attributes_dropdown_pages_args', 'add_dropdown_pages');
+add_filter('quick_edit_dropdown_pages_args', 'add_dropdown_pages');
+function add_dropdown_pages($add_dropdown_pages, $post = NULL)
+{
+	$add_dropdown_pages['post_status'] = array('publish', 'future', 'draft', 'pending', 'private',); // 公開済、予約済、下書き、承認待ち、非公開、を選択
+	return $add_dropdown_pages;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+//
+// 管理画面用CSS / JS
+// https://labo.kon-ruri.co.jp/wp-original-css-js-admin-script/
+//
+////////////////////////////////////////////////////////////////////////////////////////
+function add_admin_style()
+{
+	$path_css = get_template_directory_uri() . '/assets/css/admin.css';
+	wp_enqueue_style('admin_style', $path_css);
+	$path_js = get_template_directory_uri() . '/assets/js/admin.js';
+	wp_enqueue_script('admin_script', $path_js);
+}
+add_action('admin_enqueue_scripts', 'add_admin_style');

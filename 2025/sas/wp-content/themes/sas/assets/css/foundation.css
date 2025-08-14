@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/*
+// common
+///////////////////////////////////////////////////////////////*/
+
+*{
+	margin:0px;
+	padding:0px;
+}
+html,body{
+	width:100%;
+	height: 100%;
+}
+img{
+	width: 100%;
+	height: auto;
+}
+a{
+	transition: 0.3s;
+}
+a:hover{
+	text-align: none;
+}
+
+/*
+// Color
+///////////////////////////////////////////////////////////////*/
+
+:root{
+	--color-text : #43202D;
+	--color-white : #fff;
+	--color-accent : #F1AB3F;
+	--color-accent-dark : #796A56;
+	--color-red : #f1413f;
+	--color-bg : #ded8ca;
+	--color-bg02 : #d9cfc2;
+
+	--color-border : #978773;
+
+	--font-gravitas : "Gravitas One", serif;
+}
+
+/*
+// animation
+///////////////////////////////////////////////////////////////*/
+@keyframes gkbr {
+    0% {transform: translate(0px, 0px) rotateZ(0deg)}
+    25% {transform: translate(2px, 2px) rotateZ(1deg)}
+    50% {transform: translate(0px, 2px) rotateZ(0deg)}
+    75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+
+/*
+// html
+///////////////////////////////////////////////////////////////*/
+html{
+	font-size: 16px;
+}
+@media all and (min-width:0px) and (max-width:960px) {
+	html{
+		font-size: 3.6vw;
+	}
+}
+
+/*
+// body
+///////////////////////////////////////////////////////////////*/
+body{
+	font-family: "Zen Maru Gothic", serif;
+	color: var(--color-text);
+	line-height: 2;
+	background-color: var(--color-bg);
+}
+@media all and (min-width:0px) and (max-width:960px) {
+}
+
+
