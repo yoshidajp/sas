@@ -1,0 +1,28 @@
+html {
+  font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 3.6vw;
+  }
+}
+
+body {
+  font-family: "Noto Sans JP", serif;
+  color: #1B3B5F;
+  line-height: 2;
+  background-color: #FAFAFA;
+}
+
+a {
+  transition: 0.3s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

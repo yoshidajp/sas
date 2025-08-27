@@ -1,0 +1,40 @@
+// color
+$color-main : #3D8AD3;
+$color-sub : #80C4E9;
+$color-sub2 : #B3D6E8;
+$color-light : #E1EAF4;
+$color-bg : #FAFAFA;
+$color-text : #1B3B5F;
+$color-accent : #E04300;
+$color-accent2 : #FFD700;
+$color-border : #C0C0C0;
+$color-white : #fff;
+$grad-blue01 : linear-gradient(90deg, #0074A2 0%, #3D8AD3 100%);
+$grad-blue02 : linear-gradient(-90deg, #0074A2 0%, #3D8AD3 100%);
+$grad-red01 :  linear-gradient(90deg, #C71700 0%, #E04300 50%, #C71700 100%);
+
+
+//breakpoint
+$bp-sp : 768px;
+$bp-tab : 1280px;
+$bp-pc : 1281px;
+@mixin sp{
+	@media screen and (max-width: $bp-sp){
+		@content;
+	}
+}
+@mixin tab{
+	@media screen and (max-width: $bp-tab){
+		@content;
+	}
+}
+@mixin pc{
+	@media screen and (min-width: $bp-pc){
+		@content;
+	}
+}
+
+
+//fonts
+$font-noto : "Noto Sans JP", sans-serif;
+$font-en : "Josefin Sans", sans-serif;

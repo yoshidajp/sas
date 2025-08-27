@@ -7,10 +7,10 @@
 
 :root{
 	--c-base: #f9f9f9;
-	--c-main: #F1AB3F;
+	--c-main: #0074A2;
 	--c-accent: #f1413f;
 
-	--c-text: #43202D;
+	--c-text: #1B3B5F;
 
 	--c-gray: #999;
 	--c-white: #fff;
@@ -202,4 +202,5 @@ footer{
 	padding: 2rem 0;
 	background-color: var(--c-main);
 	text-align: center;
+	color: var(--c-white);
 }

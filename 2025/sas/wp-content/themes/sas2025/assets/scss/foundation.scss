@@ -1,0 +1,34 @@
+@use "_variable.scss" as *;
+
+
+// html
+html{
+	font-size: 16px;
+	@include sp{
+		font-size: 3.6vw;
+	}
+}
+
+// body
+body{
+	font-family: "Noto Sans JP", serif;
+	color: $color-text;
+	line-height: 2;
+	background-color: $color-bg;
+}
+
+
+//common
+a{
+	transition: 0.3s;
+}
+
+//animation
+@keyframes fadein {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+}
